@@ -21,7 +21,14 @@
       <button ion-button (click)="onSearch()">Chercher</button>
 
     <ion-card *ngFor="let img of images?.hits">
-    	<ion-card-header class="myCardHeader"><p>{{img.tags}}</p></ion-card-header>
+      <ion-item>
+        <ion-avatar><img src="{{img.userImageURL}}"> </ion-avatar>
+        <h3>{{img.user}}</h3>
+      </ion-item>
+    	<ion-card-header class="myCardHeader">
+        <p>Tags: 
+        <strong>{{img.tags}}</strong></p>
+      </ion-card-header>
     	<ion-card-content>
     		
     		<img src="{{img.previewURL}}">
